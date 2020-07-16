@@ -1,11 +1,11 @@
-# :iphone: CRUD simples Angular 9
+# :iphone: Salary Calculate
 
 <img alt="GoFinance" src="https://github.com/RaulBBrito/SalaryCalculate/blob/master/img.PNG">
 
-<p align="center">“Crud Produtos”!</blockquote>
+<p align="center">“Aplicativo para Calculo de Salário”!</blockquote>
 
 <p align="center">
-  <img alt="Linguagem Utilizada" src="https://img.shields.io/badge/language-Angular9%20%2F%20TypeScript-blue">
+  <img alt="Linguagem Utilizada" src="https://img.shields.io/badge/language-React--Native-blue">
 
   <a href="#">
     <img alt="Made by Raul Brito" src="https://img.shields.io/badge/made%20by-Raul%20Brito-blue">
