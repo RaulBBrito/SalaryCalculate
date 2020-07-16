@@ -1,6 +1,6 @@
 # :iphone: CRUD simples Angular 9
 
-<img alt="GoFinance" src="https://github.com/RaulBBrito/SalaryCalculate/img.png">
+<img alt="GoFinance" src="https://github.com/RaulBBrito/SalaryCalculate/blob/master/img.PNG">
 
 <p align="center">“Crud Produtos”!</blockquote>
 
