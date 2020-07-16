@@ -22,24 +22,23 @@
 
 ## :pencil: Sobre
 
-Um sistema simples de cadastro de Produtos contendo Cadastro, Alteração, Listagem e Exclusão de produtos para exemplificar a funcionalidade e ferramentas utilizando o Angula9. 
+O Aplicativo Salary Calculator tem o objetivo de calcular o salário e informar os descontos efetuados para exemplificar a linguagem React Native e suas funcionalidade em dispositíveis moveis para fins de conhecimento.
 
 ### :construction: Pre-requisitos
 
-O CRUD foi desenvolvido na linguagem Angular9 e TypeScript consumindo uma API desenvolvido em NodeJS com dados mocado.
+O Salary Calculator foi desenvolvido na linguagem React Native sem utilizar banco de dados mostrando resultado em tela sem nenhum armazenamento interno ou externo.
 
-Para utilizar esse projeto é necessário ter instalado o NODE e ter uma API que será consumida para buscar e salvar os dados que são manipulados no formulário.
+Para utilizar esse projeto é necessário ter instalado o NODE e baixar as suas dependências.
 
 ### :wrench: Instalação
 
-Para baixar as dependências, apenas rode o comando abaixo nas pastas /back-end e /front-end, ele criará todas as dependências nas pastas /back-end/node_modules e /front-end/node_modules:
+Para baixar as dependências, apenas rode o comando abaixo na raiz do projeto, ele criará todas as dependências nas pastas /node_modules:
 
 ```
 $ npm install 
 ```
 
-Após terminar a instalação das dependencias, inicie o seu projeto rodando o comando abaixo nas pastas /back-end e /front-end.
-No Back-end estará os dados mocado que servirá como a API, e no front-end estará todo o sistema usuario pelo usuario final:
+Após terminar a instalação das dependências, inicie o seu projeto rodando o comando abaixo na raiz do projeto:
 
 ```
 $ npm start
@@ -51,7 +50,7 @@ Se tudo correr bem conseguirá ver sua aplicação rodando no link http://localh
 
 Utilizamos apenas o GuitHub como forma de versionamento da aplicação. 
 
-## :busts_in_silhouette: Licença
+## :busts_in_silhouette: Autor
 
 * **Raul Brito** - *Projeto Inicial* - [RaulBrito](http://www.raulbbrito.com)
 * **Blog Raul Brito** - *Apoiadores* - [Blog Raul Brito](http://blog.raulbbrito.com/)
