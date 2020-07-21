@@ -23,12 +23,9 @@ interface SignInFormData {
   password: string;
 }
 import logoImg from '../../assets/logo.png';
-import { useNavigation } from '@react-navigation/native';
 
 const Salario: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
-
-  console.log("OK");
 
   // return <Container>
 

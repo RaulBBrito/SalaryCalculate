@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Animated, Dimensions } from 'react-native'
 
-import Button from '../../components/Button';
+import './styles'
 const { height } = Dimensions.get('window');
 
 interface IValores{
@@ -17,6 +17,8 @@ interface model1{
 }
 
 const ModalDetalhes = ({show, close , calculo}:model1) => {
+
+  const { width } = Dimensions.get('window');
   const [state, setState] = useState({
     opacity: new Animated.Value(0),
     container: new Animated.Value(height),
@@ -65,9 +67,49 @@ const ModalDetalhes = ({show, close , calculo}:model1) => {
         }]}
       >
         <View style={styles.indicator} />
-        <Text style={styles.text}>
-        {calculo?.desconto} / {calculo?.numdependente} / {calculo?.salariobruto} 
+
+        <Text style={styles.textTop}>
+          Dados inseridos
         </Text>
+
+        <View style={styles.dadosInseridos}>
+            <Text style={styles.itemDescricao}>Salário Bruto</Text>
+            <Text style={styles.itemValor}>R$ {calculo?.salariobruto}</Text>
+
+            <Text style={styles.itemDescricao}>Número de dependentes</Text>
+            <Text style={styles.itemValor}>{calculo?.numdependente}</Text>
+
+            <Text style={styles.itemDescricao}>Outros descontos</Text>
+            <Text style={styles.itemValor}>R$ {calculo?.desconto}</Text>
+        </View>
+
+        <Text style={styles.hr} />
+
+        <View style={styles.dadosInseridos}>
+            <Text style={styles.itemDescricaoL}>Salário Líquido</Text>
+            <Text style={styles.itemValorL}>R$ {calculo?.salariobruto}</Text>
+        </View>
+
+        <View style={styles.dadosInseridos}>
+            <Text style={styles.itemEventoB}>Evento</Text>
+            <Text style={styles.itemRefB}>Ref. </Text>
+            <Text style={styles.itemDescontoB}>Desconto</Text>
+
+            <Text style={styles.itemEventoB}>INSS</Text>
+            <Text style={styles.itemRef}>8,00%</Text>
+            <Text style={styles.itemDesconto}>R$ 83,60</Text>
+
+            <Text style={styles.itemEventoB}>IRRF</Text>
+            <Text style={styles.itemRef}>0,00%</Text>
+            <Text style={styles.itemDesconto}>R$ 0,00</Text>
+
+            <Text style={styles.itemEventoB}>Outros Descontos</Text>
+            <Text style={styles.itemRef}> - </Text>
+            <Text style={styles.itemDesconto}>R$ 85,00</Text>
+
+            <Text style={styles.itemDescricao}>Totais</Text>
+            <Text style={styles.itemValor}>R$ 168,60</Text>
+        </View>
 
         <TouchableOpacity style={styles.btn} onPress={close}>
           <Text style={{ color: '#fff' }}>Fechar</Text>
@@ -89,7 +131,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     bottom: 0,
     position: 'absolute',
-    height: '95%',
+    height: '80%',
     backgroundColor: '#fff',
     width: '95%',
     borderTopLeftRadius: 20,
@@ -106,9 +148,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 5
   },
-  text: {
-    marginTop: 50,
-    textAlign: 'center'
+  textTop: {
+    marginTop: 30,
+    fontWeight: 'bold',
+    fontSize: 18,
+    width: '100%',
+    borderBottomWidth: 1,
   },
   btn: {
     width: '100%',
@@ -117,8 +162,85 @@ const styles = StyleSheet.create({
     backgroundColor: '#673AB7', //#9b59b6
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 30
+    marginTop: 50
+  },
+  hr: {
+    marginTop: 0,
+    width: '100%',
+    borderBottomWidth: 1,
+  },
+  dadosInseridos: {
+    marginTop: 10,
+    flex: 0,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  itemDescricao: {
+    marginTop: 7,
+    alignItems: 'flex-start',
+    width: '50%' 
+  },
+  itemValor: {
+    marginTop: 7,
+    textAlign: "right",
+    width: '50%' 
+  },
+  itemDescricaoL: {
+    fontSize: 18,
+    marginTop: 15,
+    marginBottom: 15,
+    color: '#F5A836',
+    fontWeight: 'bold',
+    alignItems: 'flex-start',
+    width: '50%' 
+  },
+  itemValorL: {
+    marginTop: 15,
+    marginBottom: 15,
+    fontSize: 18,
+    color: '#F5A836',
+    fontWeight: 'bold',
+    textAlign: "right",
+    width: '50%' 
+  },
+
+  itemEventoB: {
+    width: '50%', 
+    fontWeight: 'bold',
+    marginTop: 7,
+    borderBottomWidth: 1,
+  },
+  itemRefB: {
+    width: '20%', 
+    fontWeight: 'bold',
+    alignItems: 'center',
+    marginTop: 7,
+    borderBottomWidth: 1,
+  },
+  itemDescontoB: {
+    width: '30%',
+    marginTop: 7,
+    textAlign: "right",
+    fontWeight: 'bold',
+    borderBottomWidth: 1,
+  },
+
+  itemEvento: {
+    width: '50%', 
+    marginTop: 7,
+    borderBottomWidth: 1,
+  },
+  itemRef: {
+    width: '20%', 
+    marginTop: 7,
+    borderBottomWidth: 1,
+  },
+  itemDesconto: {
+    width: '30%',
+    marginTop: 7,
+    borderBottomWidth: 1,
+    textAlign: "right",
   }
-})
+});
 
 export default ModalDetalhes

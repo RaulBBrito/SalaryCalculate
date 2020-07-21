@@ -2,7 +2,8 @@ import React, { useCallback, useRef, useState } from 'react';
 import { Image, View,
   ScrollView,
   KeyboardAvoidingView,
-  Platform, StyleSheet
+  Platform, StyleSheet,
+  Text
 }
 from 'react-native';
 
@@ -10,6 +11,8 @@ import ModalDetalhes from '../../components/Modal/ModalDetalhes';
 import Toast from 'react-native-simple-toast';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+
+import { useNavigation } from '@react-navigation/native';
 
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/mobile';
@@ -29,11 +32,13 @@ const DashBoard: React.FC = () => {
   const [modal, setModal] = useState(false);
   const [calculo, setCalculo] = useState<IValores>();
 
-  const handleSignIn = useCallback((data: Object) => {
+  const navigation = useNavigation();
+
+  const handleSignIn = useCallback((data: IValores) => {
     const calculoSomado: IValores = {
-      salariobruto: 100,
-      numdependente: 200,
-      desconto: 300,
+      salariobruto: data.salariobruto,
+      numdependente: data.numdependente,
+      desconto: data.desconto,
     };
     setCalculo(calculoSomado);
 
@@ -81,8 +86,8 @@ const DashBoard: React.FC = () => {
             <Form style={styles.formulario} ref={formRef} onSubmit={handleSignIn}>
               
               <Input name="salariobruto" icon="dollar-sign" placeholder="Salário Bruto" />
-              <Input name="numDependentes" icon="users" placeholder="Numero de Dependentes" />
-              <Input name="outrasDescontos" icon="dollar-sign" placeholder="Outos Descontos" />
+              <Input name="numdependente" icon="users" placeholder="Numero de Dependentes" />
+              <Input name="desconto" icon="dollar-sign" placeholder="Outos Descontos" />
               
               <Button
                 onPress={() => {
@@ -91,6 +96,7 @@ const DashBoard: React.FC = () => {
               >
                 Entrar
               </Button>
+              <Text style={styles.btnCancelar} onPress={() => {navigation.navigate('Splash')} }>Cancelar</Text>
             </Form>
           </Container>
             
@@ -116,6 +122,14 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#d35400',
+  },
+
+  btnCancelar:{
+    width: 310,
+    textDecorationLine: 'underline',
+    color: '#F5A836',
+    marginTop: 20,
+    textAlign: 'center',
   },
 
   formulario: {
