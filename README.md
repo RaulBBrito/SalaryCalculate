@@ -35,16 +35,18 @@ Para utilizar esse projeto é necessário ter instalado o NODE e baixar as suas 
 Para baixar as dependências, apenas rode o comando abaixo na raiz do projeto, ele criará todas as dependências nas pastas /node_modules:
 
 ```
-$ npm install 
+$ npm install ou yarn install
 ```
 
-Após terminar a instalação das dependências, inicie o seu projeto rodando o comando abaixo na raiz do projeto:
+Após terminar a instalação das dependências, inicie o seu projeto rodando os comandos abaixo na raiz do projeto:
 
 ```
-$ npm start
+$ yarn android 
+$ yarn start
+
 ```
 
-Se tudo correr bem conseguirá ver sua aplicação rodando no link http://localhost:4200/.
+Se tudo correr bem conseguirá ver sua aplicação rodando no emulador ou em um aplicativo físico conectado.
 
 ## :building_construction: Versionamento
 
