@@ -94,7 +94,7 @@ const DashBoard: React.FC = () => {
                   formRef.current?.submitForm();
                 }}
               >
-                Entrar
+                Calcular
               </Button>
               <Text style={styles.btnCancelar} onPress={() => {navigation.navigate('Splash')} }>Cancelar</Text>
             </Form>
